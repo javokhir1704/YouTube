@@ -1,0 +1,212 @@
+/*This is a header*/
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 55px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style: solid; /* This is a shorthand (shortcut) border-bottom: 10px solid #000; */
+  border-bottom-color: rgb(240, 240, 240);
+  z-index: 1; /*It will prevent the thumbnails not to appear in front of (surface)  a header*/
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.middle-section {
+  flex: 1; /*Take up the remaining amount of space. The value 1
+                              determines relatively how much space.*/
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px; /*this is for limitting a width*/
+  display: flex;
+  align-items: center; /*we want to align the two buttons and search bar
+                              so that's why i'm turn this div into flexbox*/
+}
+
+.search-bar {
+  flex: 1; /*to stretch it and take up the remaining space*/
+  height: 36px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(192, 192, 192);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 2px rgb(0, 0, 0, 0.05); /*Alpha channel - which specifies the opacity for a color.*/
+  width: 0; /*it lets us to shrink a search box as much as possible */
+}
+
+.search-bar::placeholder {
+  font-family: ROBOTO, Arial;
+  font-size: 16px;
+}
+
+.search-button {
+  height: 40px; /*This is a button*/
+  width: 66px;
+  background-color: rgb(228, 228, 228);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(192, 192, 192);
+  margin-left: -1px; /*For looking0 like a seperate buttons*/
+  margin-right: 10px;
+
+  position: relative; /*it is a container */
+}
+
+.right-section {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0; /*it means that no matter what happens,we're gonna keep this width:180 and we're not gonna shrink */
+}
+
+.search-button .tooltip,   /*Comma means here (and)*/
+                            .voice-search-button  .tooltip,
+                            .upload-icon-container .tooltip,
+                            .youtube-apps-icon-container .tooltip,
+                            .notifications-icon-container .tooltip {
+  font-family: ROBOTO, Arial;
+  position: absolute;
+  background-color: rgb(211, 211, 211);
+  padding: 4px 8px; /*First value is for a top and bottom and the second one is for a left and right.*/
+  border-radius: 2px;
+  font-size: 12px;
+  bottom: -30px;
+  opacity: 0;
+  transition: opacity 0.15s; /*we need to tell what to transition and how long the transition wii take */
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.upload-icon-container:hover .tooltip,
+.youtube-apps-icon-container:hover .tooltip,
+.notifications-icon-container:hover .tooltip {
+  opacity: 1;
+}
+
+.voice-search-button,  /*Centering a hovering text by flex*/
+                            .search-button,
+                            .upload-icon-container,
+                            .youtube-apps-icon-container,
+                            .notifications-icon-container {
+  position: relative;
+  display: flex;
+  justify-content: center; /*horizontally*/
+  align-items: center; /*vertically*/
+}
+
+.search-icon {
+  height: 24px;
+  /* margin-top:4px;  To look similar with super simple dev */
+}
+
+.voice-search-button {
+  height: 40px; /*This is a button*/
+  width: 40px;
+  border-radius: 20px; /*So, a trick here is that if you set to border-radius property 
+                              a half the width of height, it'll make it round/circle */
+  border: none;
+  background-color: rgb(245, 245, 245);
+}
+.voice-search-icon {
+  height: 24px;
+  /* margin-top:4px; we did it in order to align-vertically by align-items */
+}
+
+.hamburger-menu {
+  height: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.youtube-logo {
+  height: 24px;
+}
+
+.upload-icon {
+  height: 24px;
+}
+
+.youtube-apps-icon {
+  height: 24px;
+}
+
+.notifications-icon {
+  height: 24px;
+}
+
+.notifications-icon-container {
+  position: relative;
+}
+
+.notifications-count {
+  position: absolute;
+  top: 0px; /*To position beyond the position:relative div*/
+  right: -8px;
+  background-color: rgb(235, 39, 33);
+  color: white;
+  font-family: ROBOTO, Arial;
+  font-size: 11px;
+  padding: 1px 3px; /*first value is for a top and bottom and the second one is for a left and right*/
+  border-radius: 10px; /*if it is a qovun shape, then add more space to sides padding-left: and padding-right: */
+  font-weight: 500px;
+}
+
+.right-channel-picture {
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: left;
+}
+
+/*This is a sidebar*/
+
+.sidebar {
+  position: fixed; /*Sidebar is gonna be sticked to the left side*/
+  left: 0px;
+  bottom: 0px;
+  top: 55px; /*Put the value of the header so that the sidebar would be right below from the header*/
+  background-color: white;
+  width: 72px;
+  z-index: 2; /*Without pixels and it is for preventing a header ( border-bottom-color:) from stretching to the sidebar*/
+  padding-top: 5px;
+}
+
+.sidebar-link {
+  height: 95px; /*And we'll also give them a height because without any content in the divs, they have a height of zero*/
+  display: flex; /*To align images vertically and horizontally, we're using a flexbox*/
+  justify-content: center; /*for horizontal*/
+  align-items: center; /*for vertical*/
+  flex-direction: column; /*To dislay elements vertically*/
+  cursor: pointer;
+}
+
+.sidebar-link:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.sidebar-link img {
+  /*Here we're targeting all img element inside a sidebar-link class*/
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.sidebar-link div {
+  font-family: ROBOTO, Arial;
+  font-size: 10px;
+}

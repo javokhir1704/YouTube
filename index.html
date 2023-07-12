@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final step of finishing a project</title>
+
+  <!--Linking HTML with CSS-->
+  <link rel="stylesheet" href="./fuck.css">
+  <link rel="stylesheet" href="./general.css">
+  <link rel="stylesheet" href="./vidoe.css">
+   
+  
+  
+<!--Links are for fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+.thumbnail {
+  width:100%;/*We actually just want these elements to take up all the space in the columns that they're inside of. */ /*now,they'll only take up 
+  a hundrend percent of their cotainer\.*/
+  
+
+}
+
+
+.video-info-grid {
+  display:grid;
+  grid-template-columns: 50px 1fr; /*First value is for the first div which contains a small picture
+  and the second value for the second div which contains a info*/
+
+}
+
+
+.channel-image {
+  display:inline-block; /*If the image and descriptions are on top of each other,
+  that's because divs by default have a width of a hundred %.So we need to
+  decrease the width of image's and descriptoin's divs*/
+  width:50px;
+  vertical-align:top; /*Vertical-align is in div element*/
+
+}
+
+
+
+.video-info {
+  display:inline-block;
+  width:245px;
+  
+}
+
+.profile-picture {
+  width:40px; /* width:100%;This picture takes up the entire space of its div which is 50px;*/
+  border-radius:50px;
+}
+
+.video-title {
+  margin-top:0px;
+  font-size:14px;
+  font-weight:500; /*Just the numbers without the pixels (px)*/
+  line-height:20px;
+  margin-bottom:12px;
+  width:248px;
+}
+
+.thumbnail-row {
+  margin-bottom:10px;
+}
+
+
+ .video-author {
+  font-size:12px;
+  color:rgb(96, 96, 96);
+  margin-bottom:6px;
+ }
+
+
+ .video-stats {
+  font-size:12px;
+  color:rgb(96,96,96);
+ }
+
+p {
+  font-family:Roboto,Arial;/*If for whatever reason Roboto font
+  fails to load from Google,then it will fall back to our back up font,
+  which is Arial.*/
+  margin-bottom:0px;
+  margin-top:0px;
+  
+}
+
+
+
+
+.video-grid {
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;   
+column-gap: 16px !important;
+row-gap: 40px;
+}
+
+.video-grid {
+  column-gap:100px;
+}
+
+
+/*Media Query*/     /*This is a example of Media query
+   @media (max-width:1000px) {
+     .video-grid {
+     grid-template-columns: 1fr 1fr;
+  }
+}*/
+
+@media (max-width:550px) {
+  .video-grid {
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media (min-width:601px) and (max-width:999px) {
+  .video-grid {
+    grid-template-columns:1fr 1fr;
+  }
+ 
+
+  .video-author,
+  .video-title,
+  .video-stats {
+    font-size:16px;
+    font-family:ROBOTO,Arial;
+  }
+}
+
+@media (min-width:1000px) and (max-width:1349px) {
+  .video-grid {
+    grid-template-columns:1fr 1fr 1fr;
+  }
+
+
+  .video-author,
+  .video-title,
+  .video-stats {
+    font-size: 16px;
+    font-family:ROBOTO,Arial;
+    font-weight:500;
+  }
+}
+
+
+@media (min-width:1350px) {
+  .video-grid {
+    grid-template-columns:1fr 1fr 1fr 1fr;
+  }
+
+  .video-author,
+  .video-title,
+  .video-stats {
+    font-size: 17px;
+    font-family:ROBOTO,Arial;
+    font-weight:500;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+  <!--Header is below-->
+  
+  <header class="header">
+
+    <div class="left-section">
+      <img class="hamburger-menu" src="./icons/hamburger-menu.svg" alt="hamburger">
+      <img class="youtube-logo" src="./icons/youtube-logo.svg" alt="youtube-logo">
+    </div>
+
+    <div class="middle-section">
+      <input class="search-bar" type="text" placeholder="Search">
+
+      <!--Put a position absolute inside a position relative;-->
+      <button class="search-button"> <!--First button-->
+        <img class="search-icon" src="./icons/search.svg" alt="search-icon">
+        <div class="tooltip"> <!--Tooltip for a button-->
+          Search
+        </div>
+      </button>
+
+       <!--Put a position absolute inside a position relative;-->
+      <button class="voice-search-button">  <!--Second button-->
+        <img class="voice-search-icon" src="./icons/voice-search-icon.svg" alt="voice-icon">
+        <div class="tooltip"> <!--Tooltip for a button-->
+          Search with your voice
+        </div>
+      </button>
+    </div>
+
+    <div class="right-section">
+
+       <!--Put a position absolute inside a position relative;-->
+      <div class="upload-icon-container">
+        <img class="upload-icon" src="./icons/upload.svg" alt="upload-icon">
+        <div class="tooltip"> <!--Tooltip for a button-->
+          Create
+        </div>
+      </div>
+
+      <div class="youtube-apps-icon-container">
+        <img class="youtube-apps-icon" src="./icons/youtube-apps.svg" alt="youtube-apps">
+        <div class="tooltip"> <!--Tooltip for a button-->
+          Tools
+        </div>
+      </div>
+      
+       <div class="notifications-icon-container"> <!--It is a div for a position:relative-->
+
+        <img class="notifications-icon" src="./icons/notifications.svg" alt="notifications">
+        <div class="tooltip"> <!--Tooltip for a button-->
+          Notifications
+        </div>
+        <div class="notifications-count">
+          4 +
+        </div>
+
+       </div>
+      <img class="right-channel-picture" src="./hometask-image-folder/afterdark1.webp" alt="right-channel-picture">
+    </div>
+  </header>
+
+    <!--Sidebar is below-->
+
+ <nav class="sidebar"><!--/*And we'll also give them a height because without any content in the divs, they have a height of zero*/-->
+    <div class="sidebar-link">
+      <img src="./icons/home.svg" alt="Home">
+      <div>Home</div>
+    </div>
+    <div class="sidebar-link">
+      <img src="./icons/explore.svg" alt="explore">
+      <div>Explore</div>
+    </div>
+    <div class="sidebar-link">
+      <img src="./icons/subscriptions.svg" alt="subscription">
+      <div>Subscriptions</div>
+    </div>
+    <div class="sidebar-link">
+      <img src="./icons/originals.svg" alt="originals">
+      <div>Originals</div>
+    </div>
+    <div class="sidebar-link">
+      <img src="./icons/youtube-music.svg" alt="youtube-music">
+      <div>YouTube Music</div>
+    </div>
+    <div class="sidebar-link">
+      <img src="./icons/library.svg" alt="">
+      <div>Library</div>
+    </div>
+ </nav>
+  
+
+    <main>
+                
+        <section class="video-grid">  <!--This div is for turning to a grid it-->
+              <!--First div-->
+          <div class="video-preview"><!--Div is also a block element-->
+
+            <div class="thumbnail-row"> <!--It is our relative element for putting a time into a video -->
+              <img src="./Images/img2.webp" alt="img2" class="thumbnail"> <!--img isn't actually a container to turn it into a position:relative;-->
+
+              <div class="video-time">  <!--Position:absolute-->
+                14:20
+              </div>
+
+            </div>
+            <div class="video-info-grid">
+
+              <div class="channel-image"> <!--To align them next to each other, set the div to inline-block element-->
+                <img class="profile-picture" src="./channel-images/channel-2.jpg" alt="channel-picture">
+              </div>
+              <div class="video-info"> <!--To align them next to each other, set the div to inline-block element-->
+                <p class="video-title">
+                  EMBRACE THE STRUGGLE-Motivational Speech
+                </p>
+                <p class="video-author">
+                Chispa Motivation
+                </p>
+                <p class="video-stats">
+                  1.2K views &#183; 1 hour ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+          <!--Second div-->
+          <div class="video-preview">
+
+            <div  class="thumbnail-row">
+              <img src="./Images/img3.webp" alt="img3" class="thumbnail">
+              
+              <div class="video-time">    <!--Position:absolute-->
+                13:20 
+              </div>
+
+            </div>
+
+            <div class="video-info-grid">
+
+              <div class="channel-image">
+                <img class="profile-picture" src="./channel-images/channel-1.jpg" alt="channel-picture1">
+              </div>
+
+              <div class="video-info">
+                <p class="video-title">
+                  How I Learned to Code in 
+                  4 Months &#38; Got a Job
+                  Offer (no CS Degree)
+                </p>
+                <p class="video-author">
+                  Internet Made Coder
+                </p>
+                <p class="video-stats">
+                  3M views &#183; 1 year ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!--Third div-->
+          <div class="video-preview"><!--Div is also a block element-->
+
+            <div class="thumbnail-row">
+              <img src="./Images/img4.webp" alt="img4" class="thumbnail">
+
+              <div class="video-time">    <!--Position:absolute-->
+                8:27 
+              </div>
+
+            </div>
+            <div class="video-info-grid">
+
+              <div class="channel-image"> <!--To align them next to each other, set the div to inline-block element-->
+                <img class="profile-picture" src="./channel-images/channel-3.jpg" alt="channel-picture">
+              </div>
+              <div class="video-info"> <!--To align them next to each other, set the div to inline-block element-->
+                <p class="video-title">
+                  A Day In The Life Of A Data Scientist
+                </p>
+                <p class="video-author">
+                  Joma Tech
+                </p>
+                <p class="video-stats">
+                  2M views &#183; 4 hour ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+          <!--Fourth div-->
+          <div class="video-preview">
+
+            <div  class="thumbnail-row">
+              <img src="./Images/img5.webp" alt="img3" class="thumbnail">
+
+              <div class="video-time">    <!--Position:absolute-->
+                6:20 
+              </div>
+
+            </div>
+
+            <div class="video-info-grid">
+
+              <div class="channel-image">
+                <img class="profile-picture" src="./channel-images/channel-4.jpg" alt="channel-picture1">
+              </div>
+
+              <div class="video-info">
+                <p class="video-title">
+                  I solved 950 coding questions.
+                  Here's what i learned
+                </p>
+                <p class="video-author">
+                  Ashhad Ahmad
+                </p>
+                <p class="video-stats">
+                  355K views &#183; 2 month ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!--Fifth div-->
+          <div class="video-preview"><!--Div is also a block element-->
+
+            <div class="thumbnail-row">
+              <img src="./Images/img6.webp" alt="img2" class="thumbnail">
+
+              <div class="video-time">    <!--Position:absolute-->
+                3:16
+              </div>
+
+
+            </div>
+            <div class="video-info-grid">
+
+              <div class="channel-image"> <!--To align them next to each other, set the div to inline-block element-->
+                <img class="profile-picture" src="./channel-images/channel-5.jpg" alt="channel-picture">
+              </div>
+              <div class="video-info"> <!--To align them next to each other, set the div to inline-block element-->
+                <p class="video-title">
+                  patrick metomorphosis edit
+                </p>
+                <p class="video-author">
+                  marmaley800
+                </p>
+                <p class="video-stats">
+                  9.6K views &#183; 1 month ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+          <!--Sixth div-->
+          <div class="video-preview">
+
+            <div  class="thumbnail-row">
+              <img src="./Images/img7.webp" alt="img3" class="thumbnail">
+
+              <div class="video-time">     <!--Position:absolute-->
+                11:37 
+              </div>        
+            </div>
+
+            <div class="video-info-grid">
+
+              <div class="channel-image">
+                <img class="profile-picture" src="./channel-images/channel-6.jpg" alt="channel-picture1">
+              </div>
+
+              <div class="video-info">
+                <p class="video-title">
+                  This is the Dumbest Product I've Ever Reviewed
+                </p>
+                <p class="video-author">
+                  Marques Brownlee &#9745;
+                </p>
+                <p class="video-stats">
+                  6.8M views &#183; 1 month ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!--Seventh div-->
+          <div class="video-preview">
+
+            <div  class="thumbnail-row">
+              <img src="./Images/scrolling1.webp" alt="img7" class="thumbnail">
+
+              <div class="video-time">     <!--Position:absolute-->
+                6:44
+              </div>        
+            </div>
+
+            <div class="video-info-grid">
+
+              <div class="channel-image">
+                <img class="profile-picture" src="./channel-images/scrolling3.jpg" alt="channel-picture1">
+              </div>
+
+              <div class="video-info">
+                <p class="video-title">
+                  Is marijuana bad for your brain? -
+                  Anees Bahjil
+                </p>
+                <p class="video-author">
+                  TED-Ed &#9745;
+                </p>
+                <p class="video-stats">
+                  8.6M views &#183; 3 years ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!--eighth div-->
+          <div class="video-preview">
+
+            <div  class="thumbnail-row">
+              <img src="./Images/scrolling2.webp" alt="img8" class="thumbnail">
+
+              <div class="video-time">     <!--Position:absolute-->
+                4:51
+              </div>        
+            </div>
+
+            <div class="video-info-grid">
+
+              <div class="channel-image">
+                <img class="profile-picture" src="./channel-images/scrolling2.jpg" alt="channel-picture1">
+              </div>
+
+              <div class="video-info">
+                <p class="video-title">
+                  HE WAS THE CHAMPION OF
+                  THE WORLD | MOHAMED...
+                </p>
+                <p class="video-author">
+                  OnePath Network
+                </p>
+                <p class="video-stats">
+                  766K views &#183; 4 year ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!--ninth div-->
+          <div class="video-preview">
+
+            <div  class="thumbnail-row">
+              <img src="./Images/scrolling3.webp" alt="img9" class="thumbnail">
+
+              <div class="video-time">     <!--Position:absolute-->
+                6:21
+              </div>        
+            </div>
+
+            <div class="video-info-grid">
+
+              <div class="channel-image">
+                <img class="profile-picture" src="./channel-images/channel-2.jpg" alt="channel-picture1">
+              </div>
+
+              <div class="video-info">
+                <p class="video-title">
+                  The WARRIOR MENTALITY -
+                  Motivational Video (David Goggins)
+                </p>
+                <p class="video-author">
+                Chispa Motivation &#9745;
+                </p>
+                <p class="video-stats">
+                  206K views &#183; 4 months ago
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+            <!--tenth div-->
+            <div class="video-preview">
+
+              <div  class="thumbnail-row">
+                <img src="./Images/scrolling4.webp" alt="img9" class="thumbnail">
+
+                <div class="video-time">     <!--Position:absolute-->
+                  6:21
+                </div>        
+              </div>
+
+              <div class="video-info-grid">
+
+                <div class="channel-image">
+                  <img class="profile-picture" src="./channel-images/scrolling5.jpg" alt="channel-picture1">
+                </div>
+
+                <div class="video-info">
+                  <p class="video-title">
+                    OpenAI CEO Sam Altman: "If this technology
+                    goes wrong, it can go quit...."
+                  </p>
+                  <p class="video-author">
+                    C-Span &#9745;
+                  </p>
+                  <p class="video-stats">
+                    363K views &#183; 1 months ago
+                  </p>
+                </div>
+
+              </div>
+
+          </div>
+
+
+              <!--eleventh div-->
+              <div class="video-preview">
+
+                <div  class="thumbnail-row">
+                  <img src="./Images/scrolling5.webp" alt="img9" class="thumbnail">
+
+                  <div class="video-time">     <!--Position:absolute-->
+                    6:21
+                  </div>        
+                </div>
+
+                <div class="video-info-grid">
+
+                  <div class="channel-image">
+                    <img class="profile-picture" src="./channel-images/scrolling4.jpg" alt="channel-picture1">
+                  </div>
+
+                  <div class="video-info">
+                    <p class="video-title">
+                      Introducing Apple Vision Pro
+                    </p>
+                    <p class="video-author">
+                      Apple &#9745;
+                    </p>
+                    <p class="video-stats">
+                      51M views &#183; 2 weeks ago
+                    </p>
+                  </div>
+
+                </div>
+
+          </div>
+
+
+            <!--twelfth div-->
+            <div class="video-preview">
+
+              <div  class="thumbnail-row">
+                <img src="./Images/scrolling6.webp" alt="img9" class="thumbnail">
+
+                <div class="video-time">     <!--Position:absolute-->
+                  6:21
+                </div>        
+              </div>
+
+              <div class="video-info-grid">
+
+                <div class="channel-image">
+                  <img class="profile-picture" src="./channel-images/scrolling6.jpg" alt="channel-picture1">
+                </div>
+
+                <div class="video-info">
+                  <p class="video-title">
+                    Do This to Make $10,000 as a Student
+                  </p>
+                  <p class="video-author">
+                    Iman Gadzhi &#9745;
+                  </p>
+                  <p class="video-stats">
+                    1.2M views &#183; 2 weeks ago
+                  </p>
+                </div>
+
+              </div>
+
+          </div>
+        </section>
+    </main>
+
+
+
+</body>
+</html>

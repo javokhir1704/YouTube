@@ -1,0 +1,18 @@
+p {
+  font-family:Roboto,Arial;/*If for whatever reason Roboto font
+  fails to load from Google,then it will fall back to our back up font,
+  which is Arial.*/
+  margin-bottom:0px;
+  margin-top:0px;
+  
+}
+
+
+body {
+  margin:0; /*Before creating a header, follow the instructions.This will set all margins in all directions to zero*/
+  padding-bottom:60vh;;
+  padding-top:80px;   /*it will prevent the header to cover our content */
+  padding-left:96px; /*Sidebar is gonna no longer cover the content of our page*/
+  padding-right:24px;
+  background-color:rgb(248,248,248);
+  }
